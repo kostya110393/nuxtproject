@@ -7,7 +7,13 @@ const store = () => new Vuex.Store({
     state: {
         images: {},
         selectImg: 0,
-        modal: false
+        modal: false,
+        optionSlider: {
+            loop: true,
+            perPage: 3,
+            paginationEnabled: false,
+            autoplay: false
+        }
     },
     mutations: {
         initImage(state, param){
@@ -15,6 +21,7 @@ const store = () => new Vuex.Store({
         },
         addImage(state, img){
             state.images.push(img);
+            state.images.length > 3 ? state.optionSlider.autoplay = true : state.optionSlider.autoplay = false;
         },
         selectImgModal(state, id){
             state.selectImg = id;

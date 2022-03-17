@@ -45,6 +45,9 @@
         position: relative;
         background: #fff;
         z-index: 99;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .g_modal-overlay.level1 {
         opacity: .5;

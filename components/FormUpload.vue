@@ -42,7 +42,7 @@ export default {
                         'download_url': e.target.result
                     };
 
-                    this.$store.commit('addImage', obj);                    
+                    this.$store.commit('addImage', obj);
                 };
             }
         }

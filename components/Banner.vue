@@ -10,18 +10,14 @@
 import axios from 'axios'
 export default {
     data() {
-        return {
-            options: {
-                loop: true,
-                perPage: 3,
-                paginationEnabled: false,
-                autoplay: false
-            }
-        }
+        return {}
     },
     computed: {
         listImages(){
             return this.$store.getters.getImages
+        },
+        options(){
+            return this.$store.state.optionSlider
         }
     },
     mounted() {
@@ -29,7 +25,6 @@ export default {
         .then(response => {
             this.$store.commit('initImage', response.data);
         });
-        // this.listImages.length > 0 ? this.options.autoplay = true : this.options.autoplay = false;
     },
     methods: {
         openModal(index){
